@@ -22,20 +22,29 @@ function AddContactForm({ setS }) {
   };
 
   return (
-    <div>
+    <div className="container mt-4"style={{ maxWidth: "600px" }}>
+      <div className="mb-3">
+      <label className="form-label">Nom</label>
       <input
         type="text"
         name="name"
         value={contactsData.name}
         onChange={onChange}
+        className="form-control"
       />
+      </div>
+      <div className="mb-3">
+        <label  className="form-label ">Téléphone</label>
       <input
         type="text"
         name="phone"
         value={contactsData.phone}
         onChange={onChange}
+        class="form-control"
       />
-      <button onClick={onClick}>Ajouter</button>
+      </div>
+      <button onClick={onClick} className="btn btn-primary w-30 ">Ajouter</button>
+      
     </div>
   );
 }

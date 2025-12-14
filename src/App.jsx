@@ -12,15 +12,18 @@ function App() {
     localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
   return (
-    <>
-      <h1>Gestionnaire des contacts</h1>
-      <p>
+    
+    < div className="container mt-4">
+      <h1 className="mb-3 text-center text-primary">Gestionnaire des contacts</h1>
+      <p className="text-center text-muted">
         Ajouter un contact,Cherche par nom,trie la liste, et sauvgarde
         automatique automatique
       </p>
-      <AddContactForm />
-      <ContactsController />
-      <div>
+       <div className="mb-4">
+        <AddContactForm />
+        <ContactsController />
+      </div>
+      <div className="text-center text-muted mb-3">
         Contacts :{" "}
         {
           contacts.filter((c) => {
@@ -29,7 +32,7 @@ function App() {
           }).length
         }
       </div>
-      <ul>
+      <ul  className="list-group">
         {[...contacts]
           .sort((a, b) =>
             isSortedAsc
@@ -48,11 +51,13 @@ function App() {
               name={contact.name}
               phone={contact.phone} */
                 {...contact}
+                className="list-group-item mb-2"
               />
             );
           })}
       </ul>
-    </>
+    </div>
+    
   );
 }
 

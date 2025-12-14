@@ -4,10 +4,10 @@ import { useDispatch } from "react-redux";
 function Contact({ id, name, phone }) {
   const dispatch = useDispatch();
   return (
-    <li>
+    <li className="list-group-item container mt-4"style={{ maxWidth: "700px" }}>
       <div>
-        <h3>{name}</h3>
-        <p>{phone}</p>
+        <h3 className="mb-1">{name}</h3>
+        <p className="mb-0 text-muted">{phone}</p>
       </div>
       <div>
         <button
@@ -15,13 +15,15 @@ function Contact({ id, name, phone }) {
             navigator.clipboard.writeText(phone);
             alert("Copied " + phone);
           }}
+          className="btn btn-secondary btn-sm me-2"
         >
           Copier
-        </button>
+        </button> &nbsp;&nbsp;
         <button
           onClick={() => {
             dispatch(removeContact(id));
           }}
+          className="btn btn-danger btn-sm"
         >
           Supprimer
         </button>
