@@ -21,8 +21,8 @@ function ContactsController() {
 
       <button onClick={() => dispatch(updateIsSorted())} className="btn btn-primary">
         Trier {isSortedAsc ? "A->Z" : "Z->A"}
-      </button> &nbsp;&nbsp;&nbsp;
-    
+      </button>  &nbsp;&nbsp;&nbsp;
+
       <button
         onClick={() => {
           dispatch(removeAll());

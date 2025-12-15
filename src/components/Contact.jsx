@@ -18,7 +18,9 @@ function Contact({ id, name, phone }) {
           className="btn btn-secondary btn-sm me-2"
         >
           Copier
-        </button> &nbsp;&nbsp;
+
+        </button>&nbsp;&nbsp;
+
         <button
           onClick={() => {
             dispatch(removeContact(id));
